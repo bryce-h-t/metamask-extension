@@ -118,7 +118,7 @@ export const DefaultStory = (args) => (
       }}
     />
     <Text
-      boxProps={{ backgroundColor: renderBackgroundColor(args.color) }}
+      backgroundColor={renderBackgroundColor(args.color)}
       {...args}
     >
       {args.children}
@@ -145,7 +145,7 @@ export const Variant = (args) => (
     />
     {Object.values(TypographyVariant).map((variant) => (
       <Text
-        boxProps={{ backgroundColor: renderBackgroundColor(args.color) }}
+        backgroundColor={renderBackgroundColor(args.color)}
         {...args}
         variant={variant}
         key={variant}
@@ -177,17 +177,15 @@ export const Color = (args) => {
               <Text
                 color={TextColor.textDefault}
                 align={TextAlign.Center}
-                boxProps={{
-                  backgroundColor: BackgroundColor.warningMuted,
-                  padding: 4,
-                  borderColor: BorderColor.warningDefault,
-                }}
+                backgroundColor={BackgroundColor.warningMuted}
+                padding={4}
+                borderColor={BorderColor.warningDefault}
               >
                 DEPRECATED COLORS - DO NOT USE
               </Text>
               <Text
                 {...args}
-                boxProps={{ backgroundColor: renderBackgroundColor(color) }}
+                backgroundColor={renderBackgroundColor(color)}
                 color={color}
               >
                 <strike>{color}</strike>
@@ -198,7 +196,7 @@ export const Color = (args) => {
           return (
             <Text
               {...args}
-              boxProps={{ backgroundColor: renderBackgroundColor(color) }}
+              backgroundColor={renderBackgroundColor(color)}
               color={color}
               key={color}
             >
@@ -209,7 +207,7 @@ export const Color = (args) => {
         return (
           <Text
             {...args}
-            boxProps={{ backgroundColor: renderBackgroundColor(color) }}
+            backgroundColor={renderBackgroundColor(color)}
             color={color}
             key={color}
           >
@@ -234,7 +232,7 @@ export const FontWeight = (args) => (
     />
     {Object.values(FONT_WEIGHT).map((weight) => (
       <Text
-        boxProps={{ backgroundColor: renderBackgroundColor(args.color) }}
+        backgroundColor={renderBackgroundColor(args.color)}
         {...args}
         fontWeight={weight}
         key={weight}
@@ -258,7 +256,7 @@ export const FontStyle = (args) => (
     />
     {Object.values(FONT_STYLE).map((style) => (
       <Text
-        boxProps={{ backgroundColor: renderBackgroundColor(args.color) }}
+        backgroundColor={renderBackgroundColor(args.color)}
         {...args}
         fontStyle={style}
         key={style}
@@ -282,7 +280,7 @@ export const Align = (args) => (
     />
     {Object.values(TextAlign).map((align) => (
       <Text
-        boxProps={{ backgroundColor: renderBackgroundColor(args.color) }}
+        backgroundColor={renderBackgroundColor(args.color)}
         {...args}
         align={align}
         key={align}
@@ -332,7 +330,7 @@ export const As = (args) => (
         href: 'https://github.com/MetaMask/metamask-extension/issues/17670',
       }}
     />
-    <Text boxProps={{ display: DISPLAY.BLOCK }} marginBottom={4}>
+    <Text display={DISPLAY.BLOCK} marginBottom={4}>
       You can change the root element of the Typography component using the as
       prop. Inspect the below elements to see the underlying HTML elements
     </Text>
@@ -342,10 +340,8 @@ export const As = (args) => (
           {...args}
           as={as}
           key={as}
-          boxProps={{
-            backgroundColor: renderBackgroundColor(args.color),
-            display: DISPLAY.BLOCK,
-          }}
+          backgroundColor={renderBackgroundColor(args.color)}
+          display={DISPLAY.BLOCK}
         >
           {as}
         </Text>
@@ -386,7 +382,15 @@ export const BoxPropsStory = (args) => (
         href: 'https://github.com/MetaMask/metamask-extension/issues/17670',
       }}
     />
-    <Text {...args}>This uses the boxProps prop</Text>
+    <Text
+      {...args}
+      backgroundColor={BackgroundColor.infoMuted}
+      borderColor={BorderColor.infoDefault}
+      padding={4}
+      borderRadius={4}
+    >
+      This uses the boxProps prop
+    </Text>
   </>
 );
 

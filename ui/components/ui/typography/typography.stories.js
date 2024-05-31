@@ -16,10 +16,10 @@ import Box from '../box';
 
 import { BannerAlert } from '../../component-library/banner-alert';
 
+import { Text } from '../../component-library/text';
 import { ValidColors, ValidTags } from './typography';
 
 import README from './README.mdx';
-import Typography from '.';
 
 const sizeKnobOptions = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12];
 const marginSizeKnobOptions = [...sizeKnobOptions, 'auto'];
@@ -117,12 +117,12 @@ export const DefaultStory = (args) => (
         href: 'https://github.com/MetaMask/metamask-extension/issues/17670',
       }}
     />
-    <Typography
+    <Text
       boxProps={{ backgroundColor: renderBackgroundColor(args.color) }}
       {...args}
     >
       {args.children}
-    </Typography>
+    </Text>
   </>
 );
 
@@ -144,14 +144,14 @@ export const Variant = (args) => (
       }}
     />
     {Object.values(TypographyVariant).map((variant) => (
-      <Typography
+      <Text
         boxProps={{ backgroundColor: renderBackgroundColor(args.color) }}
         {...args}
         variant={variant}
         key={variant}
       >
         {args.children || variant}
-      </Typography>
+      </Text>
     ))}
   </>
 );
@@ -174,7 +174,7 @@ export const Color = (args) => {
         if (index === LAST_VALID_COLORS_ARRAY_INDEX) {
           return (
             <React.Fragment key={color}>
-              <Typography
+              <Text
                 color={TextColor.textDefault}
                 align={TextAlign.Center}
                 boxProps={{
@@ -184,37 +184,37 @@ export const Color = (args) => {
                 }}
               >
                 DEPRECATED COLORS - DO NOT USE
-              </Typography>
-              <Typography
+              </Text>
+              <Text
                 {...args}
                 boxProps={{ backgroundColor: renderBackgroundColor(color) }}
                 color={color}
               >
                 <strike>{color}</strike>
-              </Typography>
+              </Text>
             </React.Fragment>
           );
         } else if (index >= LAST_VALID_COLORS_ARRAY_INDEX) {
           return (
-            <Typography
+            <Text
               {...args}
               boxProps={{ backgroundColor: renderBackgroundColor(color) }}
               color={color}
               key={color}
             >
               <strike>{color}</strike>
-            </Typography>
+            </Text>
           );
         }
         return (
-          <Typography
+          <Text
             {...args}
             boxProps={{ backgroundColor: renderBackgroundColor(color) }}
             color={color}
             key={color}
           >
             {color}
-          </Typography>
+          </Text>
         );
       })}
     </>
@@ -233,14 +233,14 @@ export const FontWeight = (args) => (
       }}
     />
     {Object.values(FONT_WEIGHT).map((weight) => (
-      <Typography
+      <Text
         boxProps={{ backgroundColor: renderBackgroundColor(args.color) }}
         {...args}
         fontWeight={weight}
         key={weight}
       >
         {weight}
-      </Typography>
+      </Text>
     ))}
   </>
 );
@@ -257,14 +257,14 @@ export const FontStyle = (args) => (
       }}
     />
     {Object.values(FONT_STYLE).map((style) => (
-      <Typography
+      <Text
         boxProps={{ backgroundColor: renderBackgroundColor(args.color) }}
         {...args}
         fontStyle={style}
         key={style}
       >
         {style}
-      </Typography>
+      </Text>
     ))}
   </>
 );
@@ -281,14 +281,14 @@ export const Align = (args) => (
       }}
     />
     {Object.values(TextAlign).map((align) => (
-      <Typography
+      <Text
         boxProps={{ backgroundColor: renderBackgroundColor(args.color) }}
         {...args}
         align={align}
         key={align}
       >
         {align}
-      </Typography>
+      </Text>
     ))}
   </>
 );
@@ -311,12 +311,12 @@ export const OverflowWrap = (args) => (
         display: 'block',
       }}
     >
-      <Typography {...args} overflowWrap={OVERFLOW_WRAP.NORMAL}>
+      <Text {...args} overflowWrap={OVERFLOW_WRAP.NORMAL}>
         {OVERFLOW_WRAP.NORMAL}: 0x39013f961c378f02c2b82a6e1d31e9812786fd9d
-      </Typography>
-      <Typography {...args} overflowWrap={OVERFLOW_WRAP.BREAK_WORD}>
+      </Text>
+      <Text {...args} overflowWrap={OVERFLOW_WRAP.BREAK_WORD}>
         {OVERFLOW_WRAP.BREAK_WORD}: 0x39013f961c378f02c2b82a6e1d31e9812786fd9d
-      </Typography>
+      </Text>
     </div>
   </>
 );
@@ -332,13 +332,13 @@ export const As = (args) => (
         href: 'https://github.com/MetaMask/metamask-extension/issues/17670',
       }}
     />
-    <Typography boxProps={{ display: DISPLAY.BLOCK }} marginBottom={4}>
+    <Text boxProps={{ display: DISPLAY.BLOCK }} marginBottom={4}>
       You can change the root element of the Typography component using the as
       prop. Inspect the below elements to see the underlying HTML elements
-    </Typography>
+    </Text>
     <Box gap={4}>
       {Object.values(ValidTags).map((as) => (
-        <Typography
+        <Text
           {...args}
           as={as}
           key={as}
@@ -348,7 +348,7 @@ export const As = (args) => (
           }}
         >
           {as}
-        </Typography>
+        </Text>
       ))}
     </Box>
   </>
@@ -365,9 +365,9 @@ export const Margin = (args) => (
         href: 'https://github.com/MetaMask/metamask-extension/issues/17670',
       }}
     />
-    <Typography {...args}>
+    <Text {...args}>
       This Typography component has a margin of {args.margin * 4}px
-    </Typography>
+    </Text>
   </>
 );
 
@@ -386,7 +386,7 @@ export const BoxPropsStory = (args) => (
         href: 'https://github.com/MetaMask/metamask-extension/issues/17670',
       }}
     />
-    <Typography {...args}>This uses the boxProps prop</Typography>
+    <Text {...args}>This uses the boxProps prop</Text>
   </>
 );
 

@@ -1,8 +1,11 @@
 import React from 'react';
 
 import Box from '../box';
-import Typography from '../typography';
 import {
+  Text,
+} from '../../component-library/text';
+import {
+  TextVariant,
   Color,
   DISPLAY,
   FLEX_WRAP,
@@ -131,19 +134,19 @@ export const OnTopOfContent = (args) => {
     <div>
       <Box display={DISPLAY.FLEX} gap={4} flexWrap={FLEX_WRAP.WRAP}>
         <Box padding={6} backgroundColor={Color.backgroundAlternative}>
-          <Typography>
+          <Text variant={TextVariant.bodyMd}>
             Lorem ipsum dolor sit amet consectetur adipisicing elit.
-          </Typography>
+          </Text>
         </Box>
         <Box padding={6} backgroundColor={Color.backgroundAlternative}>
-          <Typography>
+          <Text variant={TextVariant.bodyMd}>
             Lorem ipsum dolor sit amet consectetur adipisicing elit.
-          </Typography>
+          </Text>
         </Box>
         <Box padding={6} backgroundColor={Color.backgroundAlternative}>
-          <Typography>
+          <Text variant={TextVariant.bodyMd}>
             Lorem ipsum dolor sit amet consectetur adipisicing elit.
-          </Typography>
+          </Text>
         </Box>
       </Box>
       <div style={{ position: 'absolute', top: 16, left: 16, right: 16 }}>

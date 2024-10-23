@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import PropTypes from 'prop-types';
 import classnames from 'classnames';
 import { omit } from 'lodash';
@@ -35,6 +35,12 @@ export default function Chip({
   maxContent = true,
   displayInlineBlock = false,
 }) {
+  useEffect(() => {
+    console.warn(
+      'The <Chip /> component has been deprecated in favor of the new <Tag> component from the component-library. Please update your code to use the new <Tag> component instead.',
+    );
+  }, []);
+
   const onKeyPress = (event) => {
     if (event.key === 'Enter' && onClick) {
       onClick(event);
